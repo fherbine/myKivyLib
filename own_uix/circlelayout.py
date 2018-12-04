@@ -43,7 +43,7 @@ class CircleLayout(Layout):
             offset_angle = -2.0 * math.pi / float(len_children)
 
         for index, child in enumerate(reversed(self.children)):
-            child.pos = [
+            child.center = [
                 self.center[index] + (xy * self.radius)
                 for index, xy in enumerate((
                     math.cos(offset_angle * index + first_pos),
