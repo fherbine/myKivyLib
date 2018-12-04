@@ -1,2 +1,6 @@
-# myKivyLib
-My own kivy (Python graphical framework) lib
+#Personal kivy library
+
+======================
+
+This repository is a contribution to Kivy (Python graphical framework) community
+>>>>>>> initial commit
