@@ -34,10 +34,8 @@ class CircleLayout(Layout):
         if len_children == 0:
             return
         first_pos = float(self.first_widget_pos)
-        if first_pos < 0 or first_pos > 360:
-            return
 
-        first_pos = first_pos / 180.0 * math.pi
+        first_pos = first_pos * math.pi
         orientation = self.orientation
         if orientation == 'reverse_clock':
             offset_angle = 2.0 * math.pi / float(len_children)
@@ -48,8 +46,8 @@ class CircleLayout(Layout):
             child.pos = [
                 self.center[index] + (xy * self.radius)
                 for index, xy in enumerate((
-                    math.cos(offset_angle * index),
-                    math.sin(offset_angle * index)
+                    math.cos(offset_angle * index + first_pos),
+                    math.sin(offset_angle * index + first_pos)
                 ))
             ]
 
